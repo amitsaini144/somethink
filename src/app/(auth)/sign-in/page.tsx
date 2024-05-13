@@ -18,11 +18,14 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { signInSchema } from '@/schemas/signInSchema';
 import { useState } from 'react';
+import { Loader2 } from 'lucide-react';
 
 
 export default function SignInForm() {
   const router = useRouter();
   const [isVerfied, setIsVerified] = useState(true)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
@@ -34,15 +37,16 @@ export default function SignInForm() {
 
   const { toast } = useToast();
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    setIsSubmitting(true)
     const result = await signIn('credentials', {
       redirect: false,
       identifier: data.email,
       password: data.password,
     });
-    console.log(result)
     if (result?.error) {
       if (result.error === 'Error: Verify your account before logging in') {
         setIsVerified(false)
+        setIsSubmitting(false)
         toast({
           title: 'Error',
           description: 'Verify your account before logging in',
@@ -50,6 +54,7 @@ export default function SignInForm() {
         });
       } else {
         setIsVerified(true)
+        setIsSubmitting(false)
         toast({
           title: 'Login Failed',
           description: result.error,
@@ -96,7 +101,16 @@ export default function SignInForm() {
                 </FormItem>
               )}
             />
-            <Button className='w-full' type="submit">Sign In</Button>
+            <Button type="submit" className='w-full' disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Please wait
+                </>
+              ) : (
+                'Sign in'
+              )}
+            </Button>
           </form>
         </Form>
         <div className="text-center mt-4">
