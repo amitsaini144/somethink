@@ -64,13 +64,13 @@ export default function SignInForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-100 dark:bg-black/0 mt-14">
+    <div className="flex justify-center items-center min-h-screen dark:bg-black/0">
       <div className="w-full max-w-md p-8 space-y-8 bg-white dark:bg-black/0 rounded-lg shadow-lg border">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-6">
             Welcome Back to SomeThink
           </h1>
-          <p className="mb-4">Sign in to continue your secret conversations</p>
+        
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

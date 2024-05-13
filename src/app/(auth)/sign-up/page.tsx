@@ -98,7 +98,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-100 dark:bg-black/0 mt-16">
+    <div className="flex justify-center items-center min-h-screen mt-4">
       <div className="w-full max-w-md p-8 space-y-5 bg-white rounded-lg shadow-lg border dark:bg-black/0">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-4">
@@ -162,6 +162,7 @@ export default function SignUpForm() {
                   <FormControl>
                     <Input type="password" {...field} name="password" />
                   </FormControl>
+                  <p className='text-muted text-slate-500 text-sm'>Please remember your password</p>
                   <FormMessage />
                 </FormItem>
               )}

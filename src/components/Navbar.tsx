@@ -22,7 +22,7 @@ function Navbar() {
           {user.username || user.email}
         </span>)}
         <div className='flex gap-1'>
-          <Link href={'https://github.com/amitsaini144'}
+          <Link href={'https://github.com/amitsaini144/somethink'}
             target="_blank"
             rel="noreferrer">
             <div
