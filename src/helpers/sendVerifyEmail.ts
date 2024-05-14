@@ -5,7 +5,7 @@ import { ApiResponse } from "@/types/ApiResponse";
 export async function sendVerifyEmail(username: string, email: string, otp: string): Promise<ApiResponse> {
     try {
         await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'SomeThink <verify@somethinknow.com>',
             to: email,
             subject: 'Verification OTP',
             react: VerificationEmail({ username, otp }),
