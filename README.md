@@ -29,7 +29,7 @@
    cd somethink
    ```
    
-3. Create a `.env` file based on the `.env.example` file and configure the `DATABASE_URL` with your MongoDB connection string.
+3. Create a `.env` file based on the `.env.example` file and configure the values.
 
 4. Install dependencies:
 
