@@ -23,18 +23,21 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/amitsaini144/somethink.git
+   ```
+2. Navigate to the directory:
+   ```bash
    cd somethink
    ```
+   
+3. Create a `.env` file based on the `.env.example` file and configure the `DATABASE_URL` with your MongoDB connection string.
 
-2. Create a `.env` file based on the `.env.example` file and configure the `DATABASE_URL` with your MongoDB connection string.
-
-3. Install dependencies:
+4. Install dependencies:
 
    ```bash
    npm install
    ```
 
-3. Start the development server:
+5. Start the development server:
    ```bash
    npm run dev
    ```
