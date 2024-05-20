@@ -22,7 +22,7 @@ import { useToast } from '@/components/ui/use-toast';
 import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { signUpSchema } from '@/schemas/signUpSchema';
+import { signUpSchema } from '@/schemas/zodValidation';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');

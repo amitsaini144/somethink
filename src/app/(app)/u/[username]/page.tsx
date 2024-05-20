@@ -24,7 +24,7 @@ import * as z from 'zod';
 import { ApiResponse } from '@/types/ApiResponse';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { messageSchema } from '@/schemas/messageSchema';
+import { messageSchema } from '@/schemas/zodValidation';
 
 const specialChar = '||';
 

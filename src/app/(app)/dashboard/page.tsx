@@ -14,7 +14,7 @@ import { User } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { messageAcceptSchema } from '@/schemas/messageAcceptSchema';
+import { messageAcceptSchema } from '@/schemas/zodValidation';
 
 function UserDashboard() {
   const [messages, setMessages] = useState<Message[]>([]);
