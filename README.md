@@ -1,5 +1,5 @@
 <a href="https://somethinknow.com/">
-  <img alt="SomeThink welcomes everyone in the world of anonymous feedback" src="https://github.com/amitsaini144/somethink/blob/main/public/somethink-black.PNG?raw=true">
+  <img alt="SomeThink welcomes everyone in the world of anonymous feedback" src="https://github.com/amitsaini144/somethink/blob/main/public/somethink-white.PNG?raw=true">
 </a>
 
 <h3 align="center">SomeThink</h3>
