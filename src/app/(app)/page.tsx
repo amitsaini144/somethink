@@ -4,6 +4,7 @@ import { Mail } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Autoplay from 'embla-carousel-autoplay';
 import messages from '@/messages.json';
+import { GlobeDemo } from '@/components/Globe';
 
 import {
     Carousel,
@@ -14,7 +15,8 @@ import {
 export default function Home() {
     return (
         <>
-            <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 h-screen max-h-full">
+            <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 pt-12">
+                
                 <section className="text-center mb-8 md:mb-12">
                     <h1 className="text-3xl md:text-5xl font-bold">
                          World of Anonymous Feedback
@@ -50,6 +52,7 @@ export default function Home() {
                         ))}
                     </CarouselContent>
                 </Carousel>
+                <GlobeDemo />
             </main>
 
         </>
