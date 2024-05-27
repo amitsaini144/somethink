@@ -7,6 +7,7 @@ import { Button, buttonVariants } from './ui/button';
 import { User } from 'next-auth';
 import { ThemeToggler } from './ThemeToggler';
 import { Icons } from './icons';
+import { ButtonMoving } from "@/components/ui/moving-border";
 
 function Navbar() {
   const { data: session } = useSession();
@@ -52,7 +53,8 @@ function Navbar() {
             </>
           ) : (
             <Link href="/sign-in">
-              <Button className="w-full" variant={'ghost'}>Login</Button>
+              <ButtonMoving borderRadius="1.75rem"
+                className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800" variant={'ghost'}>Login</ButtonMoving>
             </Link>
           )}
         </div>
