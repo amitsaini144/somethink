@@ -19,7 +19,7 @@ function Navbar() {
         <Link href="/" className="text-xl font-bold">
           SomeThink
         </Link>
-        {session && (<span>
+        {user && (<span>
           {user.username || user.email}
         </span>)}
         <div className='flex gap-1'>
@@ -46,11 +46,9 @@ function Navbar() {
 
           <ThemeToggler />
           {session ? (
-            <>
-              <Button onClick={() => signOut({ callbackUrl: '/' })} className="w-auto" variant='ghost'>
-                Logout
-              </Button>
-            </>
+            <Button onClick={() => signOut({ callbackUrl: '/' })} className="w-auto" variant='ghost'>
+              Logout
+            </Button>
           ) : (
             <Link href="/sign-in">
               <ButtonMoving borderRadius="1.75rem"

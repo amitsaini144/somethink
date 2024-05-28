@@ -22,16 +22,16 @@ export default function RootLayout({
     <html lang="en">
       <AuthProvider>
         <body className={inter.className}>
-        <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
           </ThemeProvider>
         </body>
       </AuthProvider>

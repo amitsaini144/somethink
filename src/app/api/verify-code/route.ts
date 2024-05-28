@@ -2,7 +2,6 @@ import dbConnect from '@/lib/db';
 import UserModel from '@/model/User';
 
 export async function POST(request: Request) {
-  // Connect to the database
   await dbConnect();
 
   try {
@@ -17,12 +16,10 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if the code is correct and not expired
     const isCodeValid = user.verifyCode === code;
     const isCodeNotExpired = new Date(user.verifyCodeExpiry) > new Date();
 
     if (isCodeValid && isCodeNotExpired) {
-      // Update the user's verification status
       user.isVerified = true;
       await user.save();
 
