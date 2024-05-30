@@ -17,7 +17,7 @@ import {
 export default function Home() {
     return (
         <>
-            <main className="flex flex-col min-h-screen items-center justify-center px-4">
+            <main className="flex flex-col flex-grow items-center justify-center px-4">
                 <section className="text-center mb-8 md:mb-12">
                     <GradualSpacing
                         className="font-display text-center text-4xl font-bold tracking-[-0.1em]  text-black dark:text-white md:text-7xl md:leading-[5rem]"
