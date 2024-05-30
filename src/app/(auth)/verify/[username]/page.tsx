@@ -17,6 +17,8 @@ import { useParams, useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { verifySchema } from '@/schemas/zodValidation';
+import LinearGradient from "@/components/magicui/linear-gradient";
+import ShineBorder from "@/components/magicui/shine-border";
 
 export default function VerifyAccount() {
   const router = useRouter();
@@ -52,8 +54,8 @@ export default function VerifyAccount() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-100 dark:bg-black/0">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg border dark:bg-black/0">
+    <div className="flex justify-center items-center min-h-screen bg-zinc-100 dark:bg-black/0 relative">
+      <ShineBorder className="w-full max-w-sm md:max-w-md md:p-8 px-8 py-5 space-y-8 bg-white rounded-lg shadow-lg border dark:bg-black/0" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-6">
             Verify Your Account
@@ -68,7 +70,7 @@ export default function VerifyAccount() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Verification Code</FormLabel>
-                  <Input {...field} />
+                  <Input {...field} className='dark:bg-black/0 bg-slate-50'/>
                   <FormMessage />
                 </FormItem>
               )}
@@ -76,7 +78,8 @@ export default function VerifyAccount() {
             <Button type="submit">Verify</Button>
           </form>
         </Form>
-      </div>
+      </ShineBorder>
+      <LinearGradient />
     </div>
   );
 }
