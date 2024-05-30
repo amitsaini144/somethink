@@ -19,7 +19,8 @@ import { useToast } from '@/components/ui/use-toast';
 import { signInSchema } from '@/schemas/zodValidation';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
-
+import LinearGradient from "@/components/magicui/linear-gradient";
+import ShineBorder from "@/components/magicui/shine-border";
 
 export default function SignInForm() {
   const router = useRouter();
@@ -70,12 +71,12 @@ export default function SignInForm() {
 
   return (
     <div className="flex justify-center items-center min-h-screen dark:bg-black/0">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white dark:bg-black/0 rounded-lg shadow-lg border">
+      <ShineBorder className="w-full max-w-md p-8 space-y-8 bg-white dark:bg-black/0 rounded-lg shadow-lg border" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-6">
             Welcome Back to SomeThink
           </h1>
-        
+
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -85,7 +86,7 @@ export default function SignInForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Email</FormLabel>
-                  <Input {...field} />
+                  <Input {...field}  className='dark:bg-black/0 bg-slate-50'/>
                   <FormMessage />
                 </FormItem>
               )}
@@ -96,7 +97,7 @@ export default function SignInForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" {...field} />
+                  <Input type="password" {...field} className='dark:bg-black/0 bg-slate-50'/>
                   <FormMessage />
                 </FormItem>
               )}
@@ -115,13 +116,14 @@ export default function SignInForm() {
         </Form>
         <div className="text-center mt-4">
           <p>
-          {isVerfied ? 'Not a member yet? ' : 'Not verified yet? '}
+            {isVerfied ? 'Not a member yet? ' : 'Not verified yet? '}
             <Link href="/sign-up" className="text-blue-600 hover:text-blue-800">
               {isVerfied ? 'Sign up' : 'Verify'}
             </Link>
           </p>
         </div>
-      </div>
+      </ShineBorder>
+      <LinearGradient />
     </div>
   );
 }
