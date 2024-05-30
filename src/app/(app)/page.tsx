@@ -6,6 +6,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import messages from '@/messages.json';
 import GradualSpacing from "@/components/magicui/gradual-spacing";
 import { FadeText } from "@/components/magicui/fade-text";
+import LinearGradient from "@/components/magicui/linear-gradient";
 
 import {
     Carousel,
@@ -16,7 +17,7 @@ import {
 export default function Home() {
     return (
         <>
-            <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 h-screen max-h-full">
+            <main className="flex flex-col min-h-screen items-center justify-center px-4">
                 <section className="text-center mb-8 md:mb-12">
                     <GradualSpacing
                         className="font-display text-center text-4xl font-bold tracking-[-0.1em]  text-black dark:text-white md:text-7xl md:leading-[5rem]"
@@ -58,7 +59,7 @@ export default function Home() {
                     </CarouselContent>
                 </Carousel>
             </main>
-
+            <LinearGradient />
         </>
     );
 }

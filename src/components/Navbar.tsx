@@ -14,7 +14,7 @@ function Navbar() {
   const user: User = session?.user;
 
   return (
-    <nav className="sticky top-0 z-50 border-b w-full backdrop-blur px-3 py-2 bg-background/50">
+    <nav className="fixed top-0 z-50 border-b w-full backdrop-blur px-3 py-2 bg-background/50">
       <div className="container mx-auto flex flex-row justify-between items-center px-0">
         <Link href="/" className="text-xl font-bold">
           SomeThink
