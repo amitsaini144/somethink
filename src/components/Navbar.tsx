@@ -19,7 +19,7 @@ function Navbar() {
         <Link href="/" className="text-xl font-bold">
           SomeThink
         </Link>
-        {user && (<span>
+        {user && (<span className='text-sm md:text-base'>
           {user.username || user.email}
         </span>)}
         <div className='flex gap-1'>

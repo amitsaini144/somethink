@@ -137,7 +137,7 @@ function UserDashboard() {
         <h1 className="text-4xl font-bold mb-4">Dashboard</h1>
 
         <div className="mb-4">
-          <h2 className="text-lg font-semibold mb-2">Share Your public link for feedbacks</h2>{' '}
+          <h2 className="text-sm md:text-lg font-semibold mb-2">Share Your public link for feedbacks</h2>{' '}
           <div className="flex items-center">
             <input
               type="text"
