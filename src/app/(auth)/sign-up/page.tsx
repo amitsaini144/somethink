@@ -100,7 +100,7 @@ export default function SignUpForm() {
 
   return (
     <div className="flex justify-center items-center min-h-screen relative">
-      <ShineBorder className="w-full max-w-sm md:max-w-md md:p-8 px-8 py-5 space-y-5 bg-white rounded-lg shadow-lg border dark:bg-black/0 mt-12" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+      <ShineBorder className="w-full max-w-sm md:max-w-md md:px-6 md:py-3 px-6 py-2 space-y-5 bg-white rounded-lg shadow-lg border dark:bg-black/0 mt-12" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-1">
             Join SomeThink

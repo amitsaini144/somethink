@@ -71,7 +71,7 @@ export default function SignInForm() {
 
   return (
     <div className="flex justify-center items-center min-h-screen dark:bg-black/0 relative">
-      <ShineBorder className="w-full max-w-sm md:max-w-md md:p-8 px-8 py-5 space-y-8 bg-white dark:bg-black/0 rounded-lg shadow-lg border" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
+      <ShineBorder className="w-full max-w-sm md:max-w-md md:px-5 md:py-4 px-6 py-3 space-y-8 bg-white dark:bg-black/0 rounded-lg shadow-lg border" color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}>
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight mb-6">
             Welcome Back to SomeThink
