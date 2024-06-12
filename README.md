@@ -9,10 +9,13 @@
 - [Next.js](https://nextjs.org/) – Framework
 - [TypeScript](https://www.typescriptlang.org/) – Language
 - [Tailwind](https://tailwindcss.com/) – CSS
+- [Shadcn/ui](https://ui.shadcn.com/), [Magic UI](https://magicui.design/)– Component library
 - [MongoDB](https://www.mongodb.com/) – Database
 - [NextAuth.js](https://next-auth.js.org/) – Auth
 - [Resend](https://resend.com/) – Emails
 - [Vercel](https://vercel.com/) – Deployments
+
+
 
 ## Prerequisites
 
