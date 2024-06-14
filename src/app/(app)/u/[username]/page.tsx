@@ -175,7 +175,7 @@ export default function SendMessage() {
                   <Button
                     key={index}
                     variant="outline"
-                    className="mb-2"
+                    className="mb-2 overflow-hidden text-ellipsis break-words whitespace-normal"
                     onClick={() => handleMessageClick(message)}
                   >
                     {message}
@@ -186,7 +186,7 @@ export default function SendMessage() {
                   <Button
                     key={index}
                     variant="outline"
-                    className="mb-2"
+                    className="mb-2 overflow-hidden text-ellipsis break-words whitespace-normal"
                     onClick={() => handleMessageClick(message)}
                   >
                     {message}
