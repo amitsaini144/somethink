@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -25,6 +25,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { messageSchema } from '@/schemas/zodValidation';
 import LinearGradient from "@/components/magicui/linear-gradient";
+import { useCompletion } from '@ai-sdk/react'
 
 const specialChar = '||';
 
@@ -52,6 +53,27 @@ export default function SendMessage() {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const {
+    complete,
+    completion,
+    isLoading: isSuggestLoading,
+    error,
+  } = useCompletion({
+    api: '/api/ai-messages',
+    initialCompletion: initialMessageString,
+  });
+
+  useEffect(() => {
+    if (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to fetch suggestions',
+        variant: 'destructive',
+      });
+    }
+  }, [error]);
+
+
   const onSubmit = async (data: z.infer<typeof messageSchema>) => {
     setIsLoading(true);
     try {
@@ -75,6 +97,19 @@ export default function SendMessage() {
       });
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const fetchSuggestedMessages = async () => {
+    try {
+      complete('');
+    } catch (error) {
+      console.error('Error fetching messages:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to set message suggestions',
+        variant: 'destructive',
+      });
     }
   };
 
@@ -121,7 +156,13 @@ export default function SendMessage() {
 
         <div className="space-y-4 my-8">
           <div className="space-y-2">
-
+            <Button
+              onClick={fetchSuggestedMessages}
+              className="my-4"
+              disabled={false}
+            >
+              Suggest Messages
+            </Button>
             <p>Click on any message below to select it.</p>
           </div>
           <Card>
@@ -129,7 +170,7 @@ export default function SendMessage() {
               <h3 className="text-xl font-semibold">Messages</h3>
             </CardHeader>
             <CardContent className="flex flex-col space-y-4">
-              {
+              {error ? (
                 parseStringMessages(initialMessageString).map((message, index) => (
                   <Button
                     key={index}
@@ -140,7 +181,18 @@ export default function SendMessage() {
                     {message}
                   </Button>
                 ))
-              }
+              ) : (
+                parseStringMessages(completion).map((message, index) => (
+                  <Button
+                    key={index}
+                    variant="outline"
+                    className="mb-2"
+                    onClick={() => handleMessageClick(message)}
+                  >
+                    {message}
+                  </Button>
+                ))
+              )}
             </CardContent>
           </Card>
         </div>
