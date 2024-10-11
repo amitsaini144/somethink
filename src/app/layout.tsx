@@ -7,6 +7,14 @@ import Navbar from '@/components/Navbar';
 import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "@/components/theme-provider"
+import localFont from "next/font/local";
+
+const satoshi = localFont({
+  display: 'swap',
+  src: '../../public/fonts/satoshi.ttf',
+  variable: '--font-satoshi',
+});
+
 
 export const metadata: Metadata = {
   title: "SomeThink",
@@ -21,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AuthProvider>
-        <body className={inter.className}>
+        <body className={`${satoshi.variable} font-satoshi antialiased`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

@@ -52,12 +52,12 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
 
     return (
         <Card className="card-bordered z-10 dark:bg-black/40">
-            <CardHeader>
-                <div className="flex justify-between items-center">
-                    <CardTitle>{message.content}</CardTitle>
+            <CardHeader className='gap-10'>
+                <div className="flex justify-between gap-4">
+                    <CardTitle className='text-lg md:text-xl'>{message.content}</CardTitle>
                     <AlertDialog >
-                        <AlertDialogTrigger asChild>
-                            <Button variant='destructive' className='bg-red-600'>
+                        <AlertDialogTrigger asChild >
+                            <Button variant='destructive' className='bg-red-600 px-3'>
                                 <X className="w-5 h-5" />
                             </Button>
                         </AlertDialogTrigger>
@@ -80,11 +80,10 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
                         </AlertDialogContent>
                     </AlertDialog>
                 </div>
-                <div className="text-sm">
+                <div className="text-xs">
                     {dayjs(message.createdAt).format('MMM D, YYYY h:mm A')}
                 </div>
             </CardHeader>
-            <CardContent></CardContent>
         </Card>
     );
 }

@@ -133,7 +133,7 @@ function UserDashboard() {
 
   return (
     <div className='min-h-screen relative'>
-      <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 rounded w-full max-w-6xl mt-20">
+      <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 pr-12 rounded w-full max-w-6xl mt-20">
         <h1 className="text-4xl font-bold mb-4">Dashboard</h1>
 
         <div className="mb-4">
