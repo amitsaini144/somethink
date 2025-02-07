@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/db";
 import UserModel from "@/model/User";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 import { sendVerifyEmail } from "@/helpers/sendVerifyEmail";
 import { NextRequest } from "next/server";
