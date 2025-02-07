@@ -6,15 +6,15 @@ import { Toaster } from "@/components/ui/toaster"
 import Navbar from '@/components/Navbar';
 import Footer from "@/components/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/context/theme-provider"
 import localFont from "next/font/local";
+import RecoilContextProvider from "@/context/Provider";
 
 const satoshi = localFont({
   display: 'swap',
   src: '../../public/fonts/satoshi.ttf',
   variable: '--font-satoshi',
 });
-
 
 export const metadata: Metadata = {
   title: "SomeThink",
@@ -36,10 +36,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
-            {children}
-            <Toaster />
-            <Footer />
+            <RecoilContextProvider>
+              <Navbar />
+              {children}
+              <Toaster />
+              <Footer />
+            </RecoilContextProvider>
           </ThemeProvider>
         </body>
       </AuthProvider>

@@ -14,6 +14,7 @@ export interface User extends Document {
 export interface Message extends Document {
     content: string
     createdAt: Date
+    _id: string
 }
 
 const MessageSchema: Schema<Message> = new Schema({

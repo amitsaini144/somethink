@@ -24,9 +24,13 @@ import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/zodValidation';
 import LinearGradient from "@/components/magicui/linear-gradient";
 import ShineBorder from '@/components/magicui/shine-border';
+import { emailState, passwordState } from '@/state/state';
+import { useSetRecoilState } from 'recoil';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
+  const setEmail = useSetRecoilState(emailState);
+  const setPassword = useSetRecoilState(passwordState);
   const [usernameMessage, setUsernameMessage] = useState('');
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,6 +75,8 @@ export default function SignUpForm() {
     setIsSubmitting(true);
     try {
       const response = await axios.post<ApiResponse>('/api/signup', data);
+      setEmail(data.email);
+      setPassword(data.password);
 
       toast({
         title: 'Success',

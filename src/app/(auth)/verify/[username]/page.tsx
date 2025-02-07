@@ -19,11 +19,16 @@ import * as z from 'zod';
 import { verifySchema } from '@/schemas/zodValidation';
 import LinearGradient from "@/components/magicui/linear-gradient";
 import ShineBorder from "@/components/magicui/shine-border";
+import { signIn } from 'next-auth/react';
+import { useRecoilValue } from 'recoil';
+import { emailState, passwordState } from '@/state/state';
 
 export default function VerifyAccount() {
   const router = useRouter();
   const params = useParams<{ username: string }>();
   const { toast } = useToast();
+  const email = useRecoilValue(emailState);
+  const password = useRecoilValue(passwordState);
   const form = useForm<z.infer<typeof verifySchema>>({
     resolver: zodResolver(verifySchema),
   });
@@ -40,7 +45,13 @@ export default function VerifyAccount() {
         description: response.data.message,
       });
 
-      router.replace('/sign-in');
+      await signIn('credentials', {
+        redirect: false,
+        identifier: email,
+        password: password,
+      });
+
+      router.replace('/dashboard');
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
