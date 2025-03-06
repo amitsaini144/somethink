@@ -22,7 +22,6 @@ import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchema } from '@/schemas/zodValidation';
-import LinearGradient from "@/components/magicui/linear-gradient";
 import ShineBorder from '@/components/magicui/shine-border';
 import { emailState, passwordState } from '@/state/state';
 import { useSetRecoilState } from 'recoil';
@@ -195,7 +194,6 @@ export default function SignUpForm() {
           </p>
         </div>
       </ShineBorder>
-      <LinearGradient />
     </div>
   );
 }

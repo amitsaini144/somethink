@@ -19,7 +19,6 @@ import { useToast } from '@/components/ui/use-toast';
 import { signInSchema } from '@/schemas/zodValidation';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
-import LinearGradient from "@/components/magicui/linear-gradient";
 import ShineBorder from "@/components/magicui/shine-border";
 
 export default function SignInForm() {
@@ -37,6 +36,7 @@ export default function SignInForm() {
   });
 
   const { toast } = useToast();
+  
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
     setIsSubmitting(true)
     const result = await signIn('credentials', {
@@ -123,7 +123,6 @@ export default function SignInForm() {
           </p>
         </div>
       </ShineBorder>
-      <LinearGradient />
     </div>
   );
 }

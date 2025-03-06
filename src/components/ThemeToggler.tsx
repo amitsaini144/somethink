@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 import { Button } from "./ui/button"
+import { Moon, Sun } from "lucide-react"
 
 export function ThemeToggler() {
   const { theme, setTheme } = useTheme()
@@ -15,11 +15,8 @@ export function ThemeToggler() {
 
   return (
     <Button variant="ghost" className="w-9 px-0" onClick={toggleTheme}>
-      {isDark ? (
-        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-      ) : (
-        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-      )}
+      <Sun className=" absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-0 dark:scale-100 transition-all" />
+      <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )

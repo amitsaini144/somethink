@@ -15,8 +15,6 @@ import { useSession } from 'next-auth/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { messageAcceptSchema } from '@/schemas/zodValidation';
-import LinearGradient from "@/components/magicui/linear-gradient";
-
 
 function UserDashboard() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -190,7 +188,6 @@ function UserDashboard() {
           )}
         </div>
       </div>
-      <LinearGradient />
     </div>
   );
 }

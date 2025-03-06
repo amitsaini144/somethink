@@ -51,7 +51,7 @@ export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
     };
 
     return (
-        <Card className="card-bordered z-10 dark:bg-black/40">
+        <Card className="card-bordered z-10 dark:bg-black/30 shadow-md">
             <CardHeader className='gap-10'>
                 <div className="flex justify-between gap-4">
                     <CardTitle className='text-lg md:text-xl'>{message.content}</CardTitle>

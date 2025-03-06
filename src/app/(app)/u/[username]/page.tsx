@@ -24,7 +24,6 @@ import { ApiResponse } from '@/types/ApiResponse';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { messageSchema } from '@/schemas/zodValidation';
-import LinearGradient from "@/components/magicui/linear-gradient";
 import { useCompletion } from '@ai-sdk/react'
 
 const specialChar = '||';
@@ -204,7 +203,6 @@ export default function SendMessage() {
           </Link>
         </div>
       </div>
-      <LinearGradient />
     </div>
   );
 }
